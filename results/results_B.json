@@ -1,0 +1,286 @@
+{
+ "n_immune_list": 1174,
+ "n_secreted_list": 2132,
+ "gse83453_groups": {
+  "Calcified": 19,
+  "Normal": 8
+ },
+ "gse153555_groups": {
+  "NC": 5,
+  "AS": 5,
+  "AI": 5
+ },
+ "gse83453_genes": 20763,
+ "gse153555_genes": 15767,
+ "deg_83453_fdr": 1620,
+ "deg_83453_strong": 397,
+ "deg_153555_fdr": 1551,
+ "n_deg1": 561,
+ "n_cand": 37,
+ "n_cand2": 28,
+ "cand_genes": [
+  "C6",
+  "CCL19",
+  "CCL21",
+  "CCL5",
+  "CD14",
+  "CD209",
+  "CD48",
+  "CD74",
+  "CFI",
+  "CNTFR",
+  "CXCL12",
+  "CXCL14",
+  "CXCL16",
+  "F5",
+  "IL17D",
+  "IL32",
+  "ISG15",
+  "LEPR",
+  "MASP1",
+  "MMP9",
+  "PLAU",
+  "PLAUR",
+  "SERPINA1",
+  "SERPINE1",
+  "SPP1",
+  "TNFRSF11B",
+  "TNFSF10",
+  "VCAM1"
+ ],
+ "go_top": [
+  {
+   "term": "Negative Regulation Of Dendritic Cell Apoptotic Process (GO:2000669)",
+   "adjP": 1.4433623568589626e-05
+  },
+  {
+   "term": "Positive Regulation Of Lymphocyte Proliferation (GO:0050671)",
+   "adjP": 1.4433623568589626e-05
+  },
+  {
+   "term": "Response To Type II Interferon (GO:0034341)",
+   "adjP": 1.4433623568589626e-05
+  },
+  {
+   "term": "Regulation Of Dendritic Cell Apoptotic Process (GO:2000668)",
+   "adjP": 2.6937383609559367e-05
+  },
+  {
+   "term": "Lymphocyte Chemotaxis (GO:0048247)",
+   "adjP": 3.520937376975382e-05
+  }
+ ],
+ "kegg_top": [
+  {
+   "term": "Cytokine-cytokine receptor interaction",
+   "adjP": 1.608909557295815e-13
+  },
+  {
+   "term": "Complement and coagulation cascades",
+   "adjP": 8.477081527333842e-12
+  },
+  {
+   "term": "Viral protein interaction with cytokine and cytokine receptor",
+   "adjP": 1.1291820880979298e-07
+  },
+  {
+   "term": "NF-kappa B signaling pathway",
+   "adjP": 1.1291820880979298e-07
+  },
+  {
+   "term": "Chemokine signaling pathway",
+   "adjP": 3.522237071146043e-06
+  }
+ ],
+ "lasso_genes": [
+  "MMP9",
+  "ISG15",
+  "CFI",
+  "CCL21",
+  "TNFSF10",
+  "SPP1",
+  "CXCL14",
+  "CD48",
+  "CXCL12",
+  "LEPR",
+  "IL32",
+  "CD14",
+  "SERPINE1",
+  "CNTFR",
+  "C6",
+  "CD74",
+  "CCL5"
+ ],
+ "svm_genes": [
+  "MMP9",
+  "CFI",
+  "CCL19",
+  "C6",
+  "CD74"
+ ],
+ "rf_genes": [
+  "CD74",
+  "CD48",
+  "CXCL12",
+  "MMP9",
+  "SPP1"
+ ],
+ "hub_genes": [
+  "CD74",
+  "MMP9"
+ ],
+ "auc_train": 1.0,
+ "auc_cv": 0.993421052631579,
+ "auc_ext": 0.92,
+ "coef": {
+  "CD74": 1.639,
+  "MMP9": 1.22
+ },
+ "immune_infiltration": [
+  {
+   "cell": "CD8+ T cells",
+   "mean_calc": 0.3698,
+   "mean_norm": -0.8782,
+   "P": 0.0001,
+   "FDR": 0.0005
+  },
+  {
+   "cell": "CD4+ T cells",
+   "mean_calc": 0.5008,
+   "mean_norm": -1.1895,
+   "P": 0.0,
+   "FDR": 0.0
+  },
+  {
+   "cell": "Tregs",
+   "mean_calc": 0.158,
+   "mean_norm": -0.3753,
+   "P": 0.0949,
+   "FDR": 0.1371
+  },
+  {
+   "cell": "B cells",
+   "mean_calc": 0.155,
+   "mean_norm": -0.368,
+   "P": 0.0448,
+   "FDR": 0.0832
+  },
+  {
+   "cell": "NK cells",
+   "mean_calc": 0.1501,
+   "mean_norm": -0.3565,
+   "P": 0.0024,
+   "FDR": 0.0076
+  },
+  {
+   "cell": "Macrophages",
+   "mean_calc": 0.0346,
+   "mean_norm": -0.0822,
+   "P": 0.1795,
+   "FDR": 0.2334
+  },
+  {
+   "cell": "Monocytes",
+   "mean_calc": 0.2954,
+   "mean_norm": -0.7016,
+   "P": 0.0,
+   "FDR": 0.0
+  },
+  {
+   "cell": "Neutrophils",
+   "mean_calc": 0.2472,
+   "mean_norm": -0.587,
+   "P": 0.0029,
+   "FDR": 0.0076
+  },
+  {
+   "cell": "Dendritic cells",
+   "mean_calc": 0.2191,
+   "mean_norm": -0.5203,
+   "P": 0.0054,
+   "FDR": 0.0117
+  },
+  {
+   "cell": "Mast cells",
+   "mean_calc": 0.2157,
+   "mean_norm": -0.5124,
+   "P": 0.0662,
+   "FDR": 0.1076
+  },
+  {
+   "cell": "Th1 cells",
+   "mean_calc": 0.0275,
+   "mean_norm": -0.0653,
+   "P": 0.5845,
+   "FDR": 0.5845
+  },
+  {
+   "cell": "Th2 cells",
+   "mean_calc": 0.0747,
+   "mean_norm": -0.1773,
+   "P": 0.2828,
+   "FDR": 0.3342
+  },
+  {
+   "cell": "Th17 cells",
+   "mean_calc": 0.0636,
+   "mean_norm": -0.1511,
+   "P": 0.5491,
+   "FDR": 0.5845
+  }
+ ],
+ "hub_immune_corr": {
+  "CD74": {
+   "CD8+ T cells": 0.623,
+   "CD4+ T cells": 0.771,
+   "Tregs": 0.445,
+   "B cells": 0.374,
+   "NK cells": 0.379,
+   "Macrophages": 0.445,
+   "Monocytes": 0.742,
+   "Neutrophils": 0.656,
+   "Dendritic cells": 0.671,
+   "Mast cells": 0.419,
+   "Th1 cells": -0.085,
+   "Th2 cells": 0.144,
+   "Th17 cells": 0.059
+  },
+  "MMP9": {
+   "CD8+ T cells": 0.448,
+   "CD4+ T cells": 0.571,
+   "Tregs": 0.112,
+   "B cells": 0.479,
+   "NK cells": 0.335,
+   "Macrophages": 0.162,
+   "Monocytes": 0.372,
+   "Neutrophils": 0.418,
+   "Dendritic cells": 0.189,
+   "Mast cells": 0.259,
+   "Th1 cells": 0.071,
+   "Th2 cells": 0.03,
+   "Th17 cells": 0.446
+  }
+ },
+ "hubstats": [
+  {
+   "gene": "CD74",
+   "log2FC_GSE83453": 0.7179,
+   "P_GSE83453": 4e-05,
+   "FDR_GSE83453": 0.00273,
+   "log2FC_GSE153555": 1.67098,
+   "P_GSE153555": 0.00021,
+   "FDR_GSE153555": 0.01262,
+   "coef": 1.63948
+  },
+  {
+   "gene": "MMP9",
+   "log2FC_GSE83453": 2.71092,
+   "P_GSE83453": 0.00014,
+   "FDR_GSE83453": 0.00625,
+   "log2FC_GSE153555": 5.00353,
+   "P_GSE153555": 0.01257,
+   "FDR_GSE153555": 0.0831,
+   "coef": 1.22049
+  }
+ ]
+}
