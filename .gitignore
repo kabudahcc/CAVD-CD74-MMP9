@@ -1,0 +1,4 @@
+# Raw data are downloaded from GEO / FinnGen (see README)
+data/raw/
+__pycache__/
+*.pyc
