@@ -1,0 +1,38 @@
+{
+ "cluster_stats": [
+  {"cluster": "VEC1", "n": 3798, "CD74_mean": 0.3259, "CD74_pct": 19.4049, "MMP9_mean": 0.0, "MMP9_pct": 0.0},
+  {"cluster": "VEC2", "n": 3940, "CD74_mean": 1.0441, "CD74_pct": 57.4619, "MMP9_mean": 0.0001, "MMP9_pct": 0.0254},
+  {"cluster": "VEC3", "n": 9706, "CD74_mean": 0.9174, "CD74_pct": 36.462, "MMP9_mean": 0.0008, "MMP9_pct": 0.0412},
+  {"cluster": "VEC4", "n": 2097, "CD74_mean": 2.2916, "CD74_pct": 84.9309, "MMP9_mean": 0.0047, "MMP9_pct": 0.4292},
+  {"cluster": "VEC5", "n": 1930, "CD74_mean": 0.5728, "CD74_pct": 42.5907, "MMP9_mean": 0.0023, "MMP9_pct": 0.2591},
+  {"cluster": "VEC6", "n": 781, "CD74_mean": 1.8549, "CD74_pct": 82.8425, "MMP9_mean": 0.0256, "MMP9_pct": 4.6095},
+  {"cluster": "VEC7", "n": 5375, "CD74_mean": 0.5202, "CD74_pct": 35.7953, "MMP9_mean": 0.0061, "MMP9_pct": 0.5395},
+  {"cluster": "VIC1", "n": 4231, "CD74_mean": 0.2716, "CD74_pct": 26.8494, "MMP9_mean": 0.0005, "MMP9_pct": 0.0709},
+  {"cluster": "VIC2", "n": 363, "CD74_mean": 0.3363, "CD74_pct": 41.0468, "MMP9_mean": 0.0, "MMP9_pct": 0.0},
+  {"cluster": "VIC3", "n": 891, "CD74_mean": 0.3328, "CD74_pct": 32.211, "MMP9_mean": 0.0018, "MMP9_pct": 0.2245},
+  {"cluster": "VIC4", "n": 1645, "CD74_mean": 0.3669, "CD74_pct": 26.3222, "MMP9_mean": 0.0168, "MMP9_pct": 1.7629},
+  {"cluster": "VIC5", "n": 4039, "CD74_mean": 0.396, "CD74_pct": 33.7707, "MMP9_mean": 0.0073, "MMP9_pct": 0.9656},
+  {"cluster": "VIC6", "n": 8577, "CD74_mean": 0.3123, "CD74_pct": 24.0877, "MMP9_mean": 0.0064, "MMP9_pct": 0.6296},
+  {"cluster": "VIC7", "n": 4252, "CD74_mean": 0.3957, "CD74_pct": 31.5381, "MMP9_mean": 0.0041, "MMP9_pct": 0.4939},
+  {"cluster": "VIC8", "n": 1291, "CD74_mean": 0.5166, "CD74_pct": 36.5608, "MMP9_mean": 0.0015, "MMP9_pct": 0.3098},
+  {"cluster": "VIC9", "n": 1175, "CD74_mean": 0.2319, "CD74_pct": 23.6596, "MMP9_mean": 0.0087, "MMP9_pct": 0.766},
+  {"cluster": "Trans1", "n": 6421, "CD74_mean": 0.3286, "CD74_pct": 12.6304, "MMP9_mean": 0.0049, "MMP9_pct": 0.2025},
+  {"cluster": "Trans2", "n": 4737, "CD74_mean": 1.5324, "CD74_pct": 55.2248, "MMP9_mean": 0.0216, "MMP9_pct": 1.0977},
+  {"cluster": "Trans3", "n": 679, "CD74_mean": 1.9073, "CD74_pct": 95.4345, "MMP9_mean": 0.0702, "MMP9_pct": 13.8439},
+  {"cluster": "Mo1", "n": 2965, "CD74_mean": 2.2065, "CD74_pct": 67.285, "MMP9_mean": 0.019, "MMP9_pct": 1.0793},
+  {"cluster": "Mo2", "n": 1484, "CD74_mean": 2.3043, "CD74_pct": 75.7412, "MMP9_mean": 0.0513, "MMP9_pct": 5.0539},
+  {"cluster": "Mo3", "n": 1101, "CD74_mean": 3.6432, "CD74_pct": 99.2734, "MMP9_mean": 0.0983, "MMP9_pct": 8.8102},
+  {"cluster": "Mo4", "n": 1181, "CD74_mean": 3.5843, "CD74_pct": 95.7663, "MMP9_mean": 0.2228, "MMP9_pct": 12.7011},
+  {"cluster": "Mo5", "n": 2516, "CD74_mean": 3.4824, "CD74_pct": 95.8267, "MMP9_mean": 0.5077, "MMP9_pct": 32.7107},
+  {"cluster": "Mo6", "n": 4148, "CD74_mean": 3.7842, "CD74_pct": 97.4446, "MMP9_mean": 0.2971, "MMP9_pct": 25.6027},
+  {"cluster": "T-Cell", "n": 2888, "CD74_mean": 0.8457, "CD74_pct": 46.5028, "MMP9_mean": 0.0334, "MMP9_pct": 2.2853},
+  {"cluster": "Stromal", "n": 145, "CD74_mean": 0.2918, "CD74_pct": 15.8621, "MMP9_mean": 0.0, "MMP9_pct": 0.0}
+ ],
+ "donor_stats": [
+  {"donor": "Donor#1", "stage": 1, "n": 29827, "CD74_all": 0.8931, "CD74_immune": 2.2998, "MMP9_all": 0.0052, "MMP9_immune": 0.0306},
+  {"donor": "Donor#2", "stage": 2, "n": 8712, "CD74_all": 1.3743, "CD74_immune": 2.6327, "MMP9_all": 0.0358, "MMP9_immune": 0.1087},
+  {"donor": "Donor#3", "stage": 3, "n": 12570, "CD74_all": 1.259, "CD74_immune": 3.0058, "MMP9_all": 0.0203, "MMP9_immune": 0.0846},
+  {"donor": "Donor#4", "stage": 4, "n": 28388, "CD74_all": 1.1386, "CD74_immune": 3.1146, "MMP9_all": 0.093, "MMP9_immune": 0.3548},
+  {"donor": "Donor#5", "stage": 5, "n": 2859, "CD74_all": 0.888, "CD74_immune": 2.3871, "MMP9_all": 0.0528, "MMP9_immune": 0.1894}
+ ]
+}

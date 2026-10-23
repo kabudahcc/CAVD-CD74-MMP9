@@ -31,6 +31,7 @@ Raw data are not re-hosted here; download from GEO/FinnGen using the accessions 
 code/
   pipe_common.py            Shared loaders (GEO series matrices, RNA-seq counts), DE, Enrichr, immune scoring
   fetch_gene_lists.py       KEGG immune pathways + UniProt secreted proteins (KW-0964) gene sets
+                            (regenerates gene_lists.json used for the intersections)
   analysis_topicB.py        Discovery DE analysis and cross-dataset concordance
   model_topicB.py           LASSO / SVM-RFE / random-forest consensus, diagnostic model, GSE153555 transfer
   full_B.py                 End-to-end pipeline producing the main figures and results_B.json
@@ -46,10 +47,10 @@ code/
                             Remote eQTL/GWAS querying helpers (tabix & parquet over HTTP range requests)
   fig7_mr.py                MR forest plot
 data/
-  gene_lists.json           KEGG immune gene set + UniProt secreted-protein set used for intersections
   mcpcounter_genes.txt      MCPcounter marker genes (ebecht/MCPcounter)
 results/
   results_*.json            Numerical outputs cited in the manuscript
+  Table_MR_results.csv      MR estimates (Wald ratio / IVW) for CD74 and MMP9
 ```
 
 ## Reproducibility
