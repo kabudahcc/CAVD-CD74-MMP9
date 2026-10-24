@@ -13,9 +13,8 @@
  },
  "sig_cells_GSE83453": [
   "T cells",
-  "B lineage",
   "Fibroblasts",
-  "Cytotoxic lymphocytes",
+  "B lineage",
   "NK cells"
  ],
  "r1": [
@@ -27,67 +26,67 @@
    "FDR": 1e-05
   },
   {
-   "cell": "B lineage",
-   "mean_case": 7.14852,
-   "mean_ctrl": 7.06242,
-   "P": 0.00109,
-   "FDR": 0.00523
-  },
-  {
    "cell": "Fibroblasts",
    "mean_case": 12.50153,
    "mean_ctrl": 11.85001,
-   "P": 0.00157,
-   "FDR": 0.00523
+   "P": 4e-05,
+   "FDR": 0.0002
   },
   {
-   "cell": "Cytotoxic lymphocytes",
-   "mean_case": 7.77362,
-   "mean_ctrl": 7.6633,
-   "P": 0.01636,
-   "FDR": 0.04091
+   "cell": "B lineage",
+   "mean_case": 7.14852,
+   "mean_ctrl": 7.06242,
+   "P": 0.00118,
+   "FDR": 0.00394
   },
   {
    "cell": "NK cells",
    "mean_case": 7.0653,
    "mean_ctrl": 7.00241,
-   "P": 0.0249,
-   "FDR": 0.04981
+   "P": 0.00361,
+   "FDR": 0.00904
   },
   {
-   "cell": "CD8 T cells",
-   "mean_case": 7.09897,
-   "mean_ctrl": 7.01887,
-   "P": 0.04039,
-   "FDR": 0.06732
+   "cell": "Cytotoxic lymphocytes",
+   "mean_case": 7.77362,
+   "mean_ctrl": 7.6633,
+   "P": 0.02527,
+   "FDR": 0.05053
   },
   {
    "cell": "Monocytic lineage",
    "mean_case": 9.36671,
    "mean_ctrl": 9.13109,
-   "P": 0.09046,
-   "FDR": 0.12923
+   "P": 0.0339,
+   "FDR": 0.0565
+  },
+  {
+   "cell": "CD8 T cells",
+   "mean_case": 7.09897,
+   "mean_ctrl": 7.01887,
+   "P": 0.05832,
+   "FDR": 0.08332
   },
   {
    "cell": "Myeloid dendritic cells",
    "mean_case": 7.34135,
    "mean_ctrl": 7.42149,
-   "P": 0.14888,
-   "FDR": 0.1861
-  },
-  {
-   "cell": "Neutrophils",
-   "mean_case": 7.35189,
-   "mean_ctrl": 7.36292,
-   "P": 0.53749,
-   "FDR": 0.57847
+   "P": 0.17953,
+   "FDR": 0.22442
   },
   {
    "cell": "Endothelial cells",
    "mean_case": 8.41638,
    "mean_ctrl": 8.47032,
-   "P": 0.57847,
-   "FDR": 0.57847
+   "P": 0.36032,
+   "FDR": 0.38873
+  },
+  {
+   "cell": "Neutrophils",
+   "mean_case": 7.35189,
+   "mean_ctrl": 7.36292,
+   "P": 0.38873,
+   "FDR": 0.38873
   }
  ],
  "r2": [
@@ -95,71 +94,71 @@
    "cell": "Fibroblasts",
    "mean_case": 10.22107,
    "mean_ctrl": 8.87511,
-   "P": 1e-05,
-   "FDR": 0.0001
+   "P": 0.00794,
+   "FDR": 0.03968
   },
   {
    "cell": "Neutrophils",
    "mean_case": 4.08106,
    "mean_ctrl": 3.36847,
-   "P": 0.00469,
-   "FDR": 0.02345
+   "P": 0.00794,
+   "FDR": 0.03968
   },
   {
    "cell": "T cells",
    "mean_case": 2.06602,
    "mean_ctrl": 1.27145,
-   "P": 0.01023,
-   "FDR": 0.03411
+   "P": 0.01587,
+   "FDR": 0.05291
   },
   {
    "cell": "CD8 T cells",
    "mean_case": 2.21394,
    "mean_ctrl": 1.24211,
-   "P": 0.02164,
-   "FDR": 0.05409
+   "P": 0.05556,
+   "FDR": 0.13889
   },
   {
    "cell": "Myeloid dendritic cells",
    "mean_case": 4.39457,
    "mean_ctrl": 4.88346,
-   "P": 0.09071,
-   "FDR": 0.18141
+   "P": 0.15079,
+   "FDR": 0.30159
   },
   {
    "cell": "B lineage",
    "mean_case": 1.48024,
    "mean_ctrl": 1.02239,
-   "P": 0.21083,
-   "FDR": 0.35138
+   "P": 0.42063,
+   "FDR": 0.60091
   },
   {
    "cell": "Cytotoxic lymphocytes",
    "mean_case": 2.13184,
    "mean_ctrl": 1.90753,
-   "P": 0.50357,
-   "FDR": 0.71938
-  },
-  {
-   "cell": "Monocytic lineage",
-   "mean_case": 5.258,
-   "mean_ctrl": 5.07865,
-   "P": 0.58635,
-   "FDR": 0.73294
-  },
-  {
-   "cell": "Endothelial cells",
-   "mean_case": 4.89722,
-   "mean_ctrl": 4.83309,
-   "P": 0.75147,
-   "FDR": 0.75962
+   "P": 0.42063,
+   "FDR": 0.60091
   },
   {
    "cell": "NK cells",
    "mean_case": 1.41941,
    "mean_ctrl": 1.51763,
-   "P": 0.75962,
-   "FDR": 0.75962
+   "P": 0.69048,
+   "FDR": 0.84127
+  },
+  {
+   "cell": "Monocytic lineage",
+   "mean_case": 5.258,
+   "mean_ctrl": 5.07865,
+   "P": 0.84127,
+   "FDR": 0.84127
+  },
+  {
+   "cell": "Endothelial cells",
+   "mean_case": 4.89722,
+   "mean_ctrl": 4.83309,
+   "P": 0.84127,
+   "FDR": 0.84127
   }
  ]
 }

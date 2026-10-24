@@ -34,7 +34,8 @@ def mcp_scores(G):
 
 def compare(scores, gr, case, ctrl):
     a = scores.loc[:, gr == case]; b = scores.loc[:, gr == ctrl]
-    p = stats.ttest_ind(a.values, b.values, axis=1, equal_var=False).pvalue
+    p = np.array([stats.mannwhitneyu(a.iloc[i].values, b.iloc[i].values,
+                                     alternative="two-sided").pvalue for i in range(a.shape[0])])
     r = pd.DataFrame({"cell": scores.index, "mean_case": a.mean(axis=1),
                       "mean_ctrl": b.mean(axis=1), "P": p})
     r["FDR"] = bh_fdr(r["P"].values)
@@ -70,14 +71,17 @@ corr = pd.DataFrame(corr_rows)
 corr["FDR"] = bh_fdr(corr["P"].values)
 corr.to_csv(os.path.join(OUT, "TableS_MCPcounter_hubcorr.csv"), index=False)
 
-# ---------- Fig5b：MCPcounter 分组比较 ----------
+# ---------- Fig5b：MCPcounter 分组比较（双队列两行） ----------
 sig = r1[r1["FDR"] < 0.05]["cell"].tolist()
-order = r1["cell"].tolist()
-fig, axes = plt.subplots(3, 4, figsize=(11.5, 7.2), dpi=300)
-for ax, ct in zip(axes.ravel(), order):
-    a = s1.loc[ct, gr1 == "Calcified"]; b = s1.loc[ct, gr1 == "Normal"]
-    row = r1[r1["cell"] == ct].iloc[0]
-    bp = ax.boxplot([b, a], tick_labels=["Normal", "Calcified"], widths=0.55,
+order = [c for c in r1["cell"].tolist() if c in set(r2["cell"])]  # 统一细胞群顺序便于跨队列比较
+
+mask2 = gr2.isin(["AS", "NC"])
+
+
+def draw_panel(ax, scores, gr, r, ct, case, ctrl):
+    a = scores.loc[ct, gr == case]; b = scores.loc[ct, gr == ctrl]
+    row = r[r["cell"] == ct].iloc[0]
+    bp = ax.boxplot([b, a], tick_labels=[ctrl, case], widths=0.55,
                     patch_artist=True, medianprops=dict(color="black"))
     for patch, c in zip(bp["boxes"], ["#8EC3E6", "#E8A198"]):
         patch.set_facecolor(c)
@@ -85,11 +89,28 @@ for ax, ct in zip(axes.ravel(), order):
         ax.scatter(np.full(len(v), i + 1) + np.random.uniform(-0.08, 0.08, len(v)),
                    v, s=9, c="black", alpha=0.55, zorder=3)
     star = "***" if row["FDR"] < 0.001 else "**" if row["FDR"] < 0.01 else "*" if row["FDR"] < 0.05 else "ns"
-    ax.set_title(f"{ct}\nFDR={row['FDR']:.3f} {star}", fontsize=8)
+    fdr_txt = "FDR<0.001" if row["FDR"] < 0.001 else f"FDR={row['FDR']:.3f}"
+    ax.set_title(f"{ct}\n{fdr_txt} {star}", fontsize=8)
     ax.tick_params(labelsize=7.5)
-[a.axis("off") for a in axes.ravel()[len(order):]]
-fig.suptitle("MCPcounter deconvolution scores, GSE83453", fontsize=11)
-fig.tight_layout(rect=[0, 0, 1, 0.94])
+
+
+ncols = 5
+nrows = int(np.ceil(len(order) / ncols))
+fig, axes = plt.subplots(nrows * 2, ncols, figsize=(12.5, 3.1 * nrows * 2), dpi=300)
+for j, ct in enumerate(order):
+    draw_panel(axes[j // ncols, j % ncols], s1, gr1, r1, ct, "Calcified", "Normal")
+for j, ct in enumerate(order):
+    draw_panel(axes[nrows + j // ncols, j % ncols], s2.loc[:, mask2], gr2[mask2], r2, ct, "AS", "NC")
+for a in axes.ravel()[len(order):nrows * ncols]:
+    a.axis("off")
+for a in axes.ravel()[nrows * ncols + len(order):]:
+    a.axis("off")
+axes[0, 0].annotate("GSE83453 (microarray)", xy=(-0.32, 0.5), xycoords="axes fraction",
+                    rotation=90, va="center", ha="center", fontsize=10, fontweight="bold")
+axes[nrows, 0].annotate("GSE153555 (RNA-seq)", xy=(-0.32, 0.5), xycoords="axes fraction",
+                        rotation=90, va="center", ha="center", fontsize=10, fontweight="bold")
+fig.suptitle("MCPcounter deconvolution scores in two independent CAVD cohorts", fontsize=11)
+fig.tight_layout(rect=[0.02, 0, 1, 0.96])
 fig.savefig(os.path.join(OUT, "Fig5_MCPcounter.png"), bbox_inches="tight")
 plt.close(fig)
 
