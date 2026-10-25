@@ -62,7 +62,8 @@ deg1 = set(r1[(r1['P.Value'] < 0.05) & (r1['log2FC'].abs() > 0.585)].index)
 cand = deg1 & IMMUNE & SECRETED & set(r2.index)
 both = r1.loc[list(cand), ['log2FC', 'P.Value']].join(r2.loc[list(cand), ['log2FC', 'P.Value']], lsuffix='_1', rsuffix='_2')
 cand2 = both[(np.sign(both['log2FC_1']) == np.sign(both['log2FC_2'])) & (both['P.Value_2'] < 0.05)]
-genes = cand2.index.tolist()
+# 固定候选基因顺序：集合运算顺序随进程随机，排序保证 LASSO/SVM-RFE/RF 结果可重复
+genes = sorted(cand2.index.tolist())
 R['n_deg1'] = len(deg1); R['n_cand'] = len(cand); R['n_cand2'] = len(cand2)
 R['cand_genes'] = sorted(genes)
 

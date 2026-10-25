@@ -98,7 +98,8 @@ print(f'DEG {len(deg1)} ∩ 免疫 {len(IMMUNE)} ∩ 分泌 {len(SECRETED)} = {l
 print('候选基因:', ', '.join(cand2.index.tolist()))
 
 # ---------- 机器学习三算法 ----------
-genes = cand2.index.tolist()
+# 固定候选基因顺序：集合运算顺序随进程随机，排序保证三算法结果可重复
+genes = sorted(cand2.index.tolist())
 X = G1.loc[genes].T.values
 y = (g1_gr == 'Calcified').astype(int).values
 scaler = StandardScaler().fit(X)
