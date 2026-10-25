@@ -1,0 +1,29 @@
+{
+  "softPower": 12,
+  "n_genes": 5000,
+  "n_modules": 13,
+  "key_module": "turquoise",
+  "key_module_cor": 0.878,
+  "key_module_P": 1.71e-09,
+  "module_sizes": {
+    "black": 125,
+    "blue": 544,
+    "brown": 481,
+    "green": 272,
+    "greenyellow": 39,
+    "grey": 963,
+    "magenta": 90,
+    "pink": 123,
+    "purple": 52,
+    "red": 195,
+    "tan": 38,
+    "turquoise": 1644,
+    "yellow": 434
+  },
+  "CD74_module": "yellow",
+  "MMP9_module": "turquoise",
+  "CD74_GS": 0.829,
+  "MMP9_GS": 0.743,
+  "CD74_MM_key": 0.751,
+  "MMP9_MM_key": 0.714
+}

@@ -1,0 +1,60 @@
+{
+ "pergene_roc": [
+  {
+   "cohort": "GSE83453",
+   "gene": "CD74",
+   "AUC": 0.987,
+   "CI_low": 0.941,
+   "CI_high": 1.0
+  },
+  {
+   "cohort": "GSE83453",
+   "gene": "MMP9",
+   "AUC": 0.921,
+   "CI_low": 0.743,
+   "CI_high": 1.0
+  },
+  {
+   "cohort": "GSE153555",
+   "gene": "CD74",
+   "AUC": 0.9,
+   "CI_low": 0.7,
+   "CI_high": 1.0
+  },
+  {
+   "cohort": "GSE153555",
+   "gene": "MMP9",
+   "AUC": 0.88,
+   "CI_low": 0.64,
+   "CI_high": 1.0
+  },
+  {
+   "cohort": "GSE12644",
+   "gene": "CD74",
+   "AUC": 0.66,
+   "CI_low": 0.39,
+   "CI_high": 0.89
+  },
+  {
+   "cohort": "GSE12644",
+   "gene": "MMP9",
+   "AUC": 0.76,
+   "CI_low": 0.51,
+   "CI_high": 0.96
+  }
+ ],
+ "ppi": {
+  "n_nodes": 26,
+  "n_edges": 77,
+  "degree_top5": {
+   "CCL5": 15,
+   "CXCL12": 15,
+   "MMP9": 14,
+   "VCAM1": 12,
+   "CD74": 8
+  },
+  "CD74_degree": 8,
+  "MMP9_degree": 14,
+  "string_min_score": 0.4
+ }
+}
