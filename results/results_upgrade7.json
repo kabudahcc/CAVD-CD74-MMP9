@@ -1,0 +1,110 @@
+{
+ "fixed_GSE153555": {
+  "auc": 0.92,
+  "sens": 0.0,
+  "spec": 1.0
+ },
+ "fixed_GSE12644": {
+  "auc": 0.6799999999999999,
+  "sens": 0.0,
+  "spec": 1.0
+ },
+ "youden_threshold_train_cv": 0.7356436633205994,
+ "stability": {
+  "CD74": {
+   "lasso": 0.69,
+   "svm": 0.53,
+   "rf": 0.545,
+   "consensus": 0.385
+  },
+  "MMP9": {
+   "lasso": 0.655,
+   "svm": 0.395,
+   "rf": 0.51,
+   "consensus": 0.28
+  }
+ },
+ "fdr_candidates": {
+  "n_deg_fdr": 397,
+  "n_cand": 20,
+  "n_rep": 17,
+  "genes": [
+   "C6",
+   "CCL19",
+   "CD48",
+   "CD74",
+   "CFI",
+   "CNTFR",
+   "CXCL12",
+   "CXCL14",
+   "CXCL16",
+   "IL17D",
+   "MASP1",
+   "MMP9",
+   "PLAU",
+   "PLAUR",
+   "SERPINE1",
+   "SPP1",
+   "VCAM1"
+  ],
+  "hub_retained": true,
+  "overlap_with_28": 17
+ },
+ "partial_corr_top": [
+  {
+   "gene": "CD74",
+   "cell": "Dendritic cells",
+   "r_pooled": 0.671,
+   "r_within_calcified": 0.576,
+   "r_partial_adj_state": 0.523,
+   "P_partial": 0.0051576830460792235,
+   "FDR_partial": 0.12934119329123114
+  },
+  {
+   "gene": "CD74",
+   "cell": "Neutrophils",
+   "r_pooled": 0.656,
+   "r_within_calcified": 0.622,
+   "r_partial_adj_state": 0.473,
+   "P_partial": 0.012733026157131469,
+   "FDR_partial": 0.12934119329123114
+  },
+  {
+   "gene": "MMP9",
+   "cell": "Th17 cells",
+   "r_pooled": 0.446,
+   "r_within_calcified": 0.435,
+   "r_partial_adj_state": 0.463,
+   "P_partial": 0.014923983841295903,
+   "FDR_partial": 0.12934119329123114
+  },
+  {
+   "gene": "CD74",
+   "cell": "Macrophages",
+   "r_pooled": 0.445,
+   "r_within_calcified": 0.448,
+   "r_partial_adj_state": 0.365,
+   "P_partial": 0.06086748615338488,
+   "FDR_partial": 0.29430658804839915
+  },
+  {
+   "gene": "MMP9",
+   "cell": "B cells",
+   "r_pooled": 0.479,
+   "r_within_calcified": 0.514,
+   "r_partial_adj_state": 0.355,
+   "P_partial": 0.06946052261744179,
+   "FDR_partial": 0.29430658804839915
+  },
+  {
+   "gene": "CD74",
+   "cell": "CD4+ T cells",
+   "r_pooled": 0.771,
+   "r_within_calcified": 0.416,
+   "r_partial_adj_state": 0.342,
+   "P_partial": 0.0811487772335839,
+   "FDR_partial": 0.29430658804839915
+  }
+ ],
+ "partial_corr_n_sig": 0
+}
