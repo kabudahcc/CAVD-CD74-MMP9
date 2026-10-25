@@ -29,14 +29,15 @@ def box(x, y, w, h, text, fc="#EAF1F3", ec="#2E6E6A", fs=8.2, bold=False):
     ax.text(x + w / 2, y + h / 2, text, ha="center", va="center", fontsize=fs,
             fontweight="bold" if bold else "normal", color="#1F3238")
 
-def arrow(x1, y1, x2, y2):
+def arrow(x1, y1, x2, y2, rad=0.0):
     ax.add_patch(FancyArrowPatch((x1, y1), (x2, y2), arrowstyle="-|>",
-                                 mutation_scale=13, color="#78909C", lw=1.3))
+                                 mutation_scale=13, color="#78909C", lw=1.3,
+                                 connectionstyle=f"arc3,rad={rad}"))
 
 ax.text(50, 98.5, "Integrated analysis framework", ha="center", fontsize=11.5, fontweight="bold", color="#1F3238")
 
 # Row A 数据层
-box(3, 84, 36, 11, "GEO bulk transcriptomes\nGSE83453 (19 vs 8) · GSE153555\nGSE12644 (10 vs 10, untouched)", "#E3F0E8")
+box(3, 84, 36, 11, "GEO bulk transcriptomes\nGSE83453 (19 vs 8) · GSE153555 (5 AS vs 5 NC)\nGSE12644 (10 vs 10, untouched)", "#E3F0E8")
 box(43, 84, 26, 11, "Single-cell RNA-seq\nGSE220774\n82,356 cells, 5 donors", "#E3F0E8")
 box(73, 84, 25, 11, "Genetics\nFinnGen R12 (14,291 cases)\neQTL Catalogue / GTEx v8", "#E3F0E8")
 
@@ -55,8 +56,9 @@ arrow(21, 42, 21, 35.5)            # ML → model
 arrow(39.5, 48.5, 42.5, 48.5)      # ML → scRNA characterization
 arrow(56, 84, 56, 56.5)            # scRNA data → scRNA analysis
 arrow(85.5, 84, 85.5, 56.5)        # genetics → MR
-arrow(56, 42, 60, 35.5)            # scRNA → immune 汇入
-arrow(85.5, 42, 78, 35.5)          # MR → immune 汇入
+arrow(56, 42, 60, 35.5)            # scRNA → immune 汇入（单细胞解析免疫景观）
+arrow(39.5, 45, 42.5, 34.5)        # ML/hub genes → immune landscape
+arrow(90, 42, 80, 14.5, rad=-0.38)  # MR → 结论（绕开 immune 框右侧）
 
 # 结论
 box(18, 3, 64, 10, "CD74 + MMP9: candidate tissue-level immune-related\nbiomarkers of calcific aortic valve disease", "#D9E8E7", ec="#2E6E6A", fs=9.5, bold=True)
