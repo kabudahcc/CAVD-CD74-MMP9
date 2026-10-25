@@ -106,7 +106,7 @@ for i, (g, c) in enumerate([("CD74", "#C0504D"), ("MMP9", "#4F81BD")]):
     rho_all = np.corrcoef(x, y_all)[0, 1]
     axb.set_xlabel("Disease stage (donor rank)", fontsize=9)
     axb.set_ylabel("Mean normalised expression", fontsize=9)
-    axb.set_title(f"{'B' if i==0 else 'C'}  {g} vs fibrocalcification stage (r={rho_all:.2f})", fontsize=9.5, loc="left")
+    axb.set_title(f"{'B' if i==0 else 'C'}  {g} vs fibrocalcification stage (descriptive; 1 donor per stage)", fontsize=9, loc="left")
     axb.tick_params(labelsize=8)
     axb.legend(fontsize=7.5)
     axb.set_xticks([1, 2, 3, 4, 5])

@@ -39,7 +39,7 @@ ax.text(50, 98.5, "Integrated analysis framework", ha="center", fontsize=11.5, f
 # Row A 数据层
 box(3, 84, 36, 11, "GEO bulk transcriptomes\nGSE83453 (19 vs 8) · GSE153555 (5 AS vs 5 NC)\nGSE12644 (10 vs 10, untouched)", "#E3F0E8")
 box(43, 84, 26, 11, "Single-cell RNA-seq\nGSE220774\n82,356 cells, 5 donors", "#E3F0E8")
-box(73, 84, 25, 11, "Genetics\nFinnGen R12 (14,291 cases)\neQTL Catalogue / GTEx v8", "#E3F0E8")
+box(73, 84, 25, 11, "Genetics\nFinnGen R12 (12,418 cases)\neQTL Catalogue / GTEx v8", "#E3F0E8")
 
 # Row B/C 左列主流程
 box(3, 63, 36, 13, "Discovery & replication\n561 DEGs ∩ 1,174 immune ∩ 2,132 secreted\n= 37 candidates → 28 replicated\n(GSE153555 + DESeq2)", "#FFFFFF")
@@ -51,7 +51,7 @@ arrow(21, 63, 21, 56.5)
 box(3, 21, 36, 13, "Two-gene diagnostic model\nNested CV AUC 0.868 (0.691–1.000)\nReplication 0.920 · Untouched 0.700\nCalibration · DCA · Nomogram", "#FDF3E7", ec="#C08030")
 box(43, 42, 26, 13, "Single-cell localization\nCD74: macrophages + diseased\nendothelium · MMP9: Mo5", "#EFE7F5", ec="#6A4A8A")
 box(72, 42, 26, 13, "Exploratory MR\n3 cis-eQTL instruments\nNo evidence of causal effect", "#EFE7F5", ec="#6A4A8A")
-box(43, 21, 55, 13, "Immune landscape\nMarker-gene z-scores + MCPcounter deconvolution\nHub gene–infiltration correlations", "#FDF3E7", ec="#C08030")
+box(43, 21, 55, 13, "Immune landscape\nMarker-gene z-scores + MCP-counter deconvolution\nHub gene–infiltration correlations", "#FDF3E7", ec="#C08030")
 arrow(21, 42, 21, 35.5)            # ML → model
 arrow(39.5, 48.5, 42.5, 48.5)      # ML → scRNA characterization
 arrow(56, 84, 56, 56.5)            # scRNA data → scRNA analysis
@@ -61,7 +61,7 @@ arrow(39.5, 45, 42.5, 34.5)        # ML/hub genes → immune landscape
 arrow(90, 42, 80, 14.5, rad=-0.38)  # MR → 结论（绕开 immune 框右侧）
 
 # 结论
-box(18, 3, 64, 10, "CD74 + MMP9: candidate tissue-level immune-related\nbiomarkers of calcific aortic valve disease", "#D9E8E7", ec="#2E6E6A", fs=9.5, bold=True)
+box(18, 3, 64, 10, "CD74 + MMP9: candidate tissue transcript-level immune-related\nfeatures of calcific aortic valve disease", "#D9E8E7", ec="#2E6E6A", fs=9.5, bold=True)
 arrow(21, 21, 34, 14.5)            # model → conclusion
 arrow(70, 21, 62, 14.5)            # immune → conclusion
 plt.tight_layout()
