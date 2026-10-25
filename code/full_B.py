@@ -74,7 +74,7 @@ ax.barh(range(len(go)), -np.log10(go['adjP']), color='#2E6E6A')
 ax.set_yticks(range(len(go)))
 ax.set_yticklabels([t.split(' (')[0][:55] for t in go['term']], fontsize=8)
 ax.set_xlabel('-log10(adjusted P)')
-ax.set_title('GO Biological Process enrichment of 28 candidate genes')
+ax.set_title('GO Biological Process enrichment of 28 replicated candidate genes')
 fig.tight_layout(); fig.savefig(os.path.join(OUT, 'Fig2_GO_enrichment.png')); plt.close(fig)
 R['go_top'] = enr['GO_Biological_Process_2023'].head(5)[['term', 'adjP']].to_dict('records')
 R['kegg_top'] = enr['KEGG_2021_Human'].head(5)[['term', 'adjP']].to_dict('records')
@@ -124,7 +124,9 @@ ytr = y; yte = (gr2 == 'AS').astype(int).values
 sc = StandardScaler().fit(trX)
 clf = LogisticRegression(penalty='l2', C=1.0, max_iter=5000).fit(sc.transform(trX), ytr)
 cv_n = min(5, sum(ytr), sum(1 - ytr))
-loo = cross_val_predict(LogisticRegression(penalty='l2', C=1.0, max_iter=5000), sc.transform(trX), ytr, cv=cv_n, method='predict_proba')[:, 1]
+# 与 upgrade6_stats.py 口径一致：打乱的分层 5 折，固定种子，保证可重复
+cv_split = StratifiedKFold(cv_n, shuffle=True, random_state=42)
+loo = cross_val_predict(LogisticRegression(penalty='l2', C=1.0, max_iter=5000), sc.transform(trX), ytr, cv=cv_split, method='predict_proba')[:, 1]
 R['auc_train'] = float(roc_auc_score(ytr, clf.predict_proba(sc.transform(trX))[:, 1]))
 R['auc_cv'] = float(roc_auc_score(ytr, loo))
 sc2 = StandardScaler().fit(teX)
@@ -138,7 +140,7 @@ ax.plot(fpr, tpr, c='#C0504D', lw=2, label=f"GSE83453 training AUC = {R['auc_tra
 fpr, tpr, _ = roc_curve(ytr, loo)
 ax.plot(fpr, tpr, c='#E8862E', lw=1.6, ls='-.', label=f"5-fold CV AUC = {R['auc_cv']:.3f}")
 fpr, tpr, _ = roc_curve(yte, score_te)
-ax.plot(fpr, tpr, c='#4F81BD', lw=2, label=f"GSE153555 validation AUC = {R['auc_ext']:.3f}")
+ax.plot(fpr, tpr, c='#4F81BD', lw=2, label=f"GSE153555 replication AUC = {R['auc_ext']:.3f}")
 ax.plot([0, 1], [0, 1], ls='--', c='grey')
 ax.set_xlabel('1 - specificity'); ax.set_ylabel('Sensitivity')
 ax.set_title(f"Diagnostic model: {' + '.join(hub)}")

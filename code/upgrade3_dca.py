@@ -60,14 +60,14 @@ ax.plot([0, 1], [0, 1], ls="--", c="grey", lw=1, label="Ideal")
 for (yy, pp, lab, c, m) in [
         (ytr, p_train, f"GSE83453 apparent (AUC={roc_auc_score(ytr, p_train):.3f})", "#C0504D", "o"),
         (ytr, p_cv, f"GSE83453 5-fold CV (AUC={roc_auc_score(ytr, p_cv):.3f})", "#E8862E", "s"),
-        (yte, p_ext, f"GSE153555 external (AUC={roc_auc_score(yte, p_ext):.3f})", "#4F81BD", "^")]:
+        (yte, p_ext, f"GSE153555 replication (AUC={roc_auc_score(yte, p_ext):.3f})", "#4F81BD", "^")]:
     g = calibration_bins(yy, pp, 8 if len(yy) > 12 else 5)
     ax.plot(g["pred"], g["obs"], marker=m, c=c, lw=1.8, ms=6, label=lab)
 ax.set_xlabel("Predicted probability of CAVD")
 ax.set_ylabel("Observed proportion")
 ax.set_title("Calibration of the CD74+MMP9 diagnostic model")
 ax.legend(fontsize=8, loc="upper left")
-ax.text(0.55, 0.12, f"Brier (CV) = {brier_score_loss(ytr, p_cv):.3f}\nBrier (external) = {brier_score_loss(yte, p_ext):.3f}",
+ax.text(0.55, 0.12, f"Brier (CV) = {brier_score_loss(ytr, p_cv):.3f}\nBrier (replication) = {brier_score_loss(yte, p_ext):.3f}",
         fontsize=8.5, transform=ax.transAxes)
 plt.tight_layout()
 plt.savefig(os.path.join(OUT, "Fig8_calibration.png"), bbox_inches="tight")
@@ -90,9 +90,9 @@ prev_tr = ytr.mean(); prev_te = yte.mean()
 ax.plot(ths, net_benefit(ytr, p_cv, ths), c="#E8862E", lw=2,
         label=f"Model, GSE83453 (5-fold CV)")
 ax.plot(ths, net_benefit(yte, p_ext, ths), c="#4F81BD", lw=2,
-        label=f"Model, GSE153555 (external)")
+        label=f"Model, GSE153555 (replication)")
 ax.plot(ths, prev_tr - (1 - prev_tr) * ths / (1 - ths), c="grey", ls=":", lw=1.4, label="Treat all (train prevalence)")
-ax.plot(ths, prev_te - (1 - prev_te) * ths / (1 - ths), c="lightgrey", ls=":", lw=1.4, label="Treat all (external prevalence)")
+ax.plot(ths, prev_te - (1 - prev_te) * ths / (1 - ths), c="lightgrey", ls=":", lw=1.4, label="Treat all (replication prevalence)")
 ax.axhline(0, c="black", lw=1.4, label="Treat none")
 ax.set_ylim(-0.1, 0.8)
 ax.set_xlim(0, 0.8)
