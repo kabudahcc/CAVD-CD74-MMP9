@@ -82,5 +82,68 @@ top = pd.concat([sig.nlargest(25, "log2FC"), sig.nsmallest(25, "log2FC")]).index
 top = [g for g in top if g in G1.index]
 M = G1.loc[top]
 Z = M.sub(M.mean(axis=1), axis=0).div(M.std(axis=1).replace(0, np.nan), axis=0).fillna(0)
-order = np.argsort((gr1 == "Calcined").values.astype(int)) if False else np.argsort((gr1 == "Calcified").values.astype(int))
+order = np.argsort((gr1 == "Calcified").values.astype(int))
 Z = Z.iloc[:, order]
+
+fig, ax = plt.subplots(figsize=(7.4, 7.8), dpi=300)
+im = ax.imshow(Z.values, aspect="auto", cmap="RdBu_r", vmin=-2.5, vmax=2.5)
+n_norm = int((gr1 == "Normal").sum())
+ax.axvline(n_norm - 0.5, color="black", lw=1)
+ax.text(n_norm / 2, len(top) + 1.5, "Normal", ha="center", fontsize=10, fontweight="bold")
+ax.text(n_norm + (Z.shape[1] - n_norm) / 2, len(top) + 1.5, "Calcified", ha="center", fontsize=10, fontweight="bold")
+ax.set_yticks(range(len(top)))
+ax.set_yticklabels(top, fontsize=5.2)
+ax.set_xticks([])
+for g in ("CD74", "MMP9"):
+    if g in top:
+        ax.get_yticklabels()[top.index(g)].set_fontweight("bold")
+        ax.get_yticklabels()[top.index(g)].set_color("#C00000")
+cb = fig.colorbar(im, ax=ax, fraction=0.035, pad=0.02)
+cb.set_label("Row z-score", fontsize=8)
+ax.set_title("Top 50 differentially expressed genes (GSE83453)", fontsize=10)
+plt.tight_layout()
+plt.savefig(os.path.join(OUT, "Fig_heatmap.png"), bbox_inches="tight")
+plt.close(fig)
+print("saved Fig_heatmap.png")
+
+# ============ 3) 多面板合成 ============
+def load_font(sz):
+    for p in [r"C:\Windows\Fonts\arialbd.ttf", r"C:\Windows\Fonts\arial.ttf"]:
+        if os.path.exists(p):
+            return ImageFont.truetype(p, sz)
+    return ImageFont.load_default()
+
+def panel_label(img, label):
+    d = ImageDraw.Draw(img)
+    f = load_font(max(28, img.width // 28))
+    d.text((img.width * 0.015, img.height * 0.012), label, fill="black", font=f)
+    return img
+
+def pad_white(img, w, h):
+    canvas = Image.new("RGB", (w, h), "white")
+    img.thumbnail((w - 20, h - 70))
+    canvas.paste(img, ((w - img.width) // 2, 60 + (h - 60 - img.height) // 2))
+    return canvas
+
+# --- Fig2: 火山图(A) + 热图(B) ---
+imgs = [Image.open(os.path.join(OUT, f)).convert("RGB") for f in ("Fig1_volcano.png", "Fig_heatmap.png")]
+cellw = max(i.width for i in imgs); cellh = max(i.height for i in imgs)
+canvas = Image.new("RGB", (cellw * 2, cellh), "white")
+for k, (im, lab) in enumerate(zip(imgs, "AB")):
+    c = pad_white(im.copy(), cellw, cellh)
+    panel_label(c, lab)
+    canvas.paste(c, (k * cellw, 0))
+canvas.save(os.path.join(OUT, "Fig2_volcano_heatmap.png"))
+print("saved Fig2_volcano_heatmap.png", canvas.size)
+
+# --- Fig5: ROC(A) + 校准(B) + DCA(C) + 列线图(D) ---
+imgs = [Image.open(os.path.join(OUT, f)).convert("RGB")
+        for f in ("Fig4_ROC.png", "Fig8_calibration.png", "Fig9_DCA.png", "Fig10_nomogram.png")]
+cellw = max(i.width for i in imgs); cellh = max(i.height for i in imgs)
+canvas = Image.new("RGB", (cellw * 2, cellh * 2), "white")
+for k, (im, lab) in enumerate(zip(imgs, "ABCD")):
+    c = pad_white(im.copy(), cellw, cellh)
+    panel_label(c, lab)
+    canvas.paste(c, ((k % 2) * cellw, (k // 2) * cellh))
+canvas.save(os.path.join(OUT, "Fig5_model_panels.png"))
+print("saved Fig5_model_panels.png", canvas.size)
