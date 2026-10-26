@@ -1,0 +1,21 @@
+{
+ "pdb": "1GKC chain A (MMP9 catalytic domain, residues 107-215/391-443)",
+ "box_center": [
+  65.839,
+  30.707,
+  117.746
+ ],
+ "box_size": [
+  22,
+  22,
+  22
+ ],
+ "exhaustiveness": 16,
+ "affinities": {
+  "SB-3CT": -7.785,
+  "celecoxib": -9.085,
+  "toremifene": -7.552,
+  "dapagliflozin": -8.753,
+  "rolipram": -7.547
+ }
+}
