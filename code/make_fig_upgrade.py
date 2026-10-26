@@ -20,8 +20,8 @@ plt.rcParams["font.family"] = "Arial"
 OUT = r"C:\Users\98757\Desktop\生信分析\论文_选题B"
 
 # ============ 1) 流程图（自上而下流向） ============
-fig, ax = plt.subplots(figsize=(9.6, 7.0), dpi=300)
-ax.set_xlim(0, 100); ax.set_ylim(0, 100); ax.axis("off")
+fig, ax = plt.subplots(figsize=(9.6, 8.0), dpi=300)
+ax.set_xlim(0, 100); ax.set_ylim(-14, 100); ax.axis("off")
 
 def box(x, y, w, h, text, fc="#EAF1F3", ec="#2E6E6A", fs=8.2, bold=False):
     ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.6",
@@ -58,12 +58,17 @@ arrow(56, 84, 56, 56.5)            # scRNA data → scRNA analysis
 arrow(85.5, 84, 85.5, 56.5)        # genetics → MR
 arrow(56, 42, 60, 35.5)            # scRNA → immune 汇入（单细胞解析免疫景观）
 arrow(39.5, 45, 42.5, 34.5)        # ML/hub genes → immune landscape
-arrow(90, 42, 80, 14.5, rad=-0.38)  # MR → 结论（绕开 immune 框右侧）
+arrow(90, 42, 80, -1.2, rad=-0.38)  # MR → 结论（绕开 immune 框右侧）
+
+# 探索性转化层
+box(43, 3, 55, 12, "Exploratory translation (hypothesis-generating)\nLINCS L1000 signature reversers (dapagliflozin, celecoxib)\nMMP9 docking · ceRNA network (14 shared miRNAs)", "#EFE7F5", ec="#6A4A8A")
+arrow(39.5, 45, 50, 16.5, rad=-0.25)  # hub genes → 探索性转化
+arrow(70, 21, 70, 16.5)               # immune → 探索性转化
+arrow(70, 3, 62, -1.0)                # 探索性转化 → 结论
 
 # 结论
-box(18, 3, 64, 10, "CD74 + MMP9: candidate tissue transcript-level immune-related\nfeatures of calcific aortic valve disease", "#D9E8E7", ec="#2E6E6A", fs=9.5, bold=True)
-arrow(21, 21, 34, 14.5)            # model → conclusion
-arrow(70, 21, 62, 14.5)            # immune → conclusion
+box(18, -12.5, 64, 10, "CD74 + MMP9: candidate tissue transcript-level immune-related\nfeatures of calcific aortic valve disease", "#D9E8E7", ec="#2E6E6A", fs=9.5, bold=True)
+arrow(21, 21, 34, -1.0)            # model → conclusion
 plt.tight_layout()
 plt.savefig(os.path.join(OUT, "Fig_workflow.png"), bbox_inches="tight")
 plt.close(fig)
@@ -77,68 +82,5 @@ top = pd.concat([sig.nlargest(25, "log2FC"), sig.nsmallest(25, "log2FC")]).index
 top = [g for g in top if g in G1.index]
 M = G1.loc[top]
 Z = M.sub(M.mean(axis=1), axis=0).div(M.std(axis=1).replace(0, np.nan), axis=0).fillna(0)
-order = np.argsort((gr1 == "Calcified").values.astype(int))
+order = np.argsort((gr1 == "Calcined").values.astype(int)) if False else np.argsort((gr1 == "Calcified").values.astype(int))
 Z = Z.iloc[:, order]
-
-fig, ax = plt.subplots(figsize=(7.4, 7.8), dpi=300)
-im = ax.imshow(Z.values, aspect="auto", cmap="RdBu_r", vmin=-2.5, vmax=2.5)
-n_norm = int((gr1 == "Normal").sum())
-ax.axvline(n_norm - 0.5, color="black", lw=1)
-ax.text(n_norm / 2, len(top) + 1.5, "Normal", ha="center", fontsize=10, fontweight="bold")
-ax.text(n_norm + (Z.shape[1] - n_norm) / 2, len(top) + 1.5, "Calcified", ha="center", fontsize=10, fontweight="bold")
-ax.set_yticks(range(len(top)))
-ax.set_yticklabels(top, fontsize=5.2)
-ax.set_xticks([])
-for g in ("CD74", "MMP9"):
-    if g in top:
-        ax.get_yticklabels()[top.index(g)].set_fontweight("bold")
-        ax.get_yticklabels()[top.index(g)].set_color("#C00000")
-cb = fig.colorbar(im, ax=ax, fraction=0.035, pad=0.02)
-cb.set_label("Row z-score", fontsize=8)
-ax.set_title("Top 50 differentially expressed genes (GSE83453)", fontsize=10)
-plt.tight_layout()
-plt.savefig(os.path.join(OUT, "Fig_heatmap.png"), bbox_inches="tight")
-plt.close(fig)
-print("saved Fig_heatmap.png")
-
-# ============ 3) 多面板合成 ============
-def load_font(sz):
-    for p in [r"C:\Windows\Fonts\arialbd.ttf", r"C:\Windows\Fonts\arial.ttf"]:
-        if os.path.exists(p):
-            return ImageFont.truetype(p, sz)
-    return ImageFont.load_default()
-
-def panel_label(img, label):
-    d = ImageDraw.Draw(img)
-    f = load_font(max(28, img.width // 28))
-    d.text((img.width * 0.015, img.height * 0.012), label, fill="black", font=f)
-    return img
-
-def pad_white(img, w, h):
-    canvas = Image.new("RGB", (w, h), "white")
-    img.thumbnail((w - 20, h - 70))
-    canvas.paste(img, ((w - img.width) // 2, 60 + (h - 60 - img.height) // 2))
-    return canvas
-
-# --- Fig2: 火山图(A) + 热图(B) ---
-imgs = [Image.open(os.path.join(OUT, f)).convert("RGB") for f in ("Fig1_volcano.png", "Fig_heatmap.png")]
-cellw = max(i.width for i in imgs); cellh = max(i.height for i in imgs)
-canvas = Image.new("RGB", (cellw * 2, cellh), "white")
-for k, (im, lab) in enumerate(zip(imgs, "AB")):
-    c = pad_white(im.copy(), cellw, cellh)
-    panel_label(c, lab)
-    canvas.paste(c, (k * cellw, 0))
-canvas.save(os.path.join(OUT, "Fig2_volcano_heatmap.png"))
-print("saved Fig2_volcano_heatmap.png", canvas.size)
-
-# --- Fig5: ROC(A) + 校准(B) + DCA(C) + 列线图(D) ---
-imgs = [Image.open(os.path.join(OUT, f)).convert("RGB")
-        for f in ("Fig4_ROC.png", "Fig8_calibration.png", "Fig9_DCA.png", "Fig10_nomogram.png")]
-cellw = max(i.width for i in imgs); cellh = max(i.height for i in imgs)
-canvas = Image.new("RGB", (cellw * 2, cellh * 2), "white")
-for k, (im, lab) in enumerate(zip(imgs, "ABCD")):
-    c = pad_white(im.copy(), cellw, cellh)
-    panel_label(c, lab)
-    canvas.paste(c, ((k % 2) * cellw, (k // 2) * cellh))
-canvas.save(os.path.join(OUT, "Fig5_model_panels.png"))
-print("saved Fig5_model_panels.png", canvas.size)
