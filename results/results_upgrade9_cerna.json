@@ -1,0 +1,170 @@
+{
+ "shared_miRNAs": [
+  {
+   "miRNA": "hsa-miR-191-5p",
+   "CD74_validated": true,
+   "MMP9_validated": true,
+   "CD74_predicted": false,
+   "MMP9_predicted": false
+  },
+  {
+   "miRNA": "hsa-miR-335-5p",
+   "CD74_validated": true,
+   "MMP9_validated": true,
+   "CD74_predicted": false,
+   "MMP9_predicted": false
+  },
+  {
+   "miRNA": "hsa-let-7a-5p",
+   "CD74_validated": true,
+   "MMP9_validated": true,
+   "CD74_predicted": false,
+   "MMP9_predicted": false
+  },
+  {
+   "miRNA": "hsa-let-7e-5p",
+   "CD74_validated": true,
+   "MMP9_validated": true,
+   "CD74_predicted": false,
+   "MMP9_predicted": false
+  },
+  {
+   "miRNA": "hsa-miR-196a-5p",
+   "CD74_validated": true,
+   "MMP9_validated": true,
+   "CD74_predicted": false,
+   "MMP9_predicted": false
+  },
+  {
+   "miRNA": "hsa-miR-7-5p",
+   "CD74_validated": true,
+   "MMP9_validated": true,
+   "CD74_predicted": false,
+   "MMP9_predicted": false
+  },
+  {
+   "miRNA": "hsa-miR-423-5p",
+   "CD74_validated": true,
+   "MMP9_validated": true,
+   "CD74_predicted": false,
+   "MMP9_predicted": false
+  },
+  {
+   "miRNA": "hsa-miR-877-5p",
+   "CD74_validated": true,
+   "MMP9_validated": true,
+   "CD74_predicted": false,
+   "MMP9_predicted": false
+  },
+  {
+   "miRNA": "hsa-miR-183-5p",
+   "CD74_validated": true,
+   "MMP9_validated": false,
+   "CD74_predicted": false,
+   "MMP9_predicted": true
+  },
+  {
+   "miRNA": "hsa-miR-9-3p",
+   "CD74_validated": true,
+   "MMP9_validated": true,
+   "CD74_predicted": false,
+   "MMP9_predicted": false
+  },
+  {
+   "miRNA": "hsa-miR-34a-5p",
+   "CD74_validated": true,
+   "MMP9_validated": true,
+   "CD74_predicted": false,
+   "MMP9_predicted": false
+  },
+  {
+   "miRNA": "hsa-miR-338-3p",
+   "CD74_validated": true,
+   "MMP9_validated": true,
+   "CD74_predicted": false,
+   "MMP9_predicted": false
+  },
+  {
+   "miRNA": "hsa-miR-146a-5p",
+   "CD74_validated": true,
+   "MMP9_validated": true,
+   "CD74_predicted": false,
+   "MMP9_predicted": false
+  },
+  {
+   "miRNA": "hsa-miR-4450",
+   "CD74_validated": false,
+   "MMP9_validated": false,
+   "CD74_predicted": true,
+   "MMP9_predicted": true
+  }
+ ],
+ "lncrna_mirna": [
+  {"lncRNA": "XIST", "miRNA": "hsa-miR-191-5p", "clipExpNum": 9},
+  {"lncRNA": "MIR600HG", "miRNA": "hsa-miR-191-5p", "clipExpNum": 5},
+  {"lncRNA": "AC079781.5", "miRNA": "hsa-miR-191-5p", "clipExpNum": 4},
+  {"lncRNA": "AC125603.1", "miRNA": "hsa-miR-191-5p", "clipExpNum": 1},
+  {"lncRNA": "AC026471.1", "miRNA": "hsa-miR-191-5p", "clipExpNum": 1},
+  {"lncRNA": "NEAT1", "miRNA": "hsa-miR-335-5p", "clipExpNum": 18},
+  {"lncRNA": "XIST", "miRNA": "hsa-miR-335-5p", "clipExpNum": 17},
+  {"lncRNA": "KCNQ1OT1", "miRNA": "hsa-miR-335-5p", "clipExpNum": 6},
+  {"lncRNA": "AC069277.1", "miRNA": "hsa-miR-335-5p", "clipExpNum": 5},
+  {"lncRNA": "AC016876.2", "miRNA": "hsa-miR-335-5p", "clipExpNum": 5},
+  {"lncRNA": "XIST", "miRNA": "hsa-let-7a-5p", "clipExpNum": 37},
+  {"lncRNA": "AL359762.3", "miRNA": "hsa-let-7a-5p", "clipExpNum": 37},
+  {"lncRNA": "NEAT1", "miRNA": "hsa-let-7a-5p", "clipExpNum": 17},
+  {"lncRNA": "NUTM2A-AS1", "miRNA": "hsa-let-7a-5p", "clipExpNum": 13},
+  {"lncRNA": "SNHG16", "miRNA": "hsa-let-7a-5p", "clipExpNum": 12},
+  {"lncRNA": "XIST", "miRNA": "hsa-let-7e-5p", "clipExpNum": 37},
+  {"lncRNA": "AL359762.3", "miRNA": "hsa-let-7e-5p", "clipExpNum": 36},
+  {"lncRNA": "NEAT1", "miRNA": "hsa-let-7e-5p", "clipExpNum": 17},
+  {"lncRNA": "NUTM2A-AS1", "miRNA": "hsa-let-7e-5p", "clipExpNum": 13},
+  {"lncRNA": "SNHG16", "miRNA": "hsa-let-7e-5p", "clipExpNum": 12},
+  {"lncRNA": "H19", "miRNA": "hsa-miR-196a-5p", "clipExpNum": 25},
+  {"lncRNA": "NEAT1", "miRNA": "hsa-miR-196a-5p", "clipExpNum": 9},
+  {"lncRNA": "FGD5-AS1", "miRNA": "hsa-miR-196a-5p", "clipExpNum": 7},
+  {"lncRNA": "SNHG16", "miRNA": "hsa-miR-196a-5p", "clipExpNum": 6},
+  {"lncRNA": "XIST", "miRNA": "hsa-miR-196a-5p", "clipExpNum": 6},
+  {"lncRNA": "OIP5-AS1", "miRNA": "hsa-miR-7-5p", "clipExpNum": 67},
+  {"lncRNA": "XIST", "miRNA": "hsa-miR-7-5p", "clipExpNum": 20},
+  {"lncRNA": "LINC00632", "miRNA": "hsa-miR-7-5p", "clipExpNum": 19},
+  {"lncRNA": "KCNQ1OT1", "miRNA": "hsa-miR-7-5p", "clipExpNum": 5},
+  {"lncRNA": "AC016876.2", "miRNA": "hsa-miR-7-5p", "clipExpNum": 4},
+  {"lncRNA": "MIRLET7BHG", "miRNA": "hsa-miR-423-5p", "clipExpNum": 94},
+  {"lncRNA": "MIR663AHG", "miRNA": "hsa-miR-423-5p", "clipExpNum": 28},
+  {"lncRNA": "AL356488.2", "miRNA": "hsa-miR-423-5p", "clipExpNum": 24},
+  {"lncRNA": "XIST", "miRNA": "hsa-miR-423-5p", "clipExpNum": 12},
+  {"lncRNA": "NEAT1", "miRNA": "hsa-miR-423-5p", "clipExpNum": 9},
+  {"lncRNA": "XIST", "miRNA": "hsa-miR-877-5p", "clipExpNum": 23},
+  {"lncRNA": "SNHG16", "miRNA": "hsa-miR-877-5p", "clipExpNum": 14},
+  {"lncRNA": "NEAT1", "miRNA": "hsa-miR-877-5p", "clipExpNum": 13},
+  {"lncRNA": "LINC00910", "miRNA": "hsa-miR-877-5p", "clipExpNum": 11},
+  {"lncRNA": "AC104581.4", "miRNA": "hsa-miR-877-5p", "clipExpNum": 2},
+  {"lncRNA": "AL359762.3", "miRNA": "hsa-miR-183-5p", "clipExpNum": 21},
+  {"lncRNA": "OIP5-AS1", "miRNA": "hsa-miR-183-5p", "clipExpNum": 11},
+  {"lncRNA": "AC126365.1", "miRNA": "hsa-miR-183-5p", "clipExpNum": 10},
+  {"lncRNA": "NEAT1", "miRNA": "hsa-miR-183-5p", "clipExpNum": 5},
+  {"lncRNA": "AC067852.2", "miRNA": "hsa-miR-183-5p", "clipExpNum": 2},
+  {"lncRNA": "NORAD", "miRNA": "hsa-miR-9-3p", "clipExpNum": 4},
+  {"lncRNA": "AC016710.1", "miRNA": "hsa-miR-9-3p", "clipExpNum": 2},
+  {"lncRNA": "MIR22HG", "miRNA": "hsa-miR-9-3p", "clipExpNum": 2},
+  {"lncRNA": "NEAT1", "miRNA": "hsa-miR-9-3p", "clipExpNum": 2},
+  {"lncRNA": "XIST", "miRNA": "hsa-miR-9-3p", "clipExpNum": 2},
+  {"lncRNA": "NEAT1", "miRNA": "hsa-miR-34a-5p", "clipExpNum": 16},
+  {"lncRNA": "HAND2-AS1", "miRNA": "hsa-miR-34a-5p", "clipExpNum": 4},
+  {"lncRNA": "SNHG7", "miRNA": "hsa-miR-34a-5p", "clipExpNum": 4},
+  {"lncRNA": "AC067852.1", "miRNA": "hsa-miR-34a-5p", "clipExpNum": 3},
+  {"lncRNA": "AC005722.3", "miRNA": "hsa-miR-34a-5p", "clipExpNum": 2},
+  {"lncRNA": "XIST", "miRNA": "hsa-miR-338-3p", "clipExpNum": 20},
+  {"lncRNA": "OIP5-AS1", "miRNA": "hsa-miR-338-3p", "clipExpNum": 14},
+  {"lncRNA": "MALAT1", "miRNA": "hsa-miR-338-3p", "clipExpNum": 9},
+  {"lncRNA": "NEAT1", "miRNA": "hsa-miR-338-3p", "clipExpNum": 9},
+  {"lncRNA": "AC069277.1", "miRNA": "hsa-miR-338-3p", "clipExpNum": 3},
+  {"lncRNA": "MALAT1", "miRNA": "hsa-miR-146a-5p", "clipExpNum": 38},
+  {"lncRNA": "SNHG16", "miRNA": "hsa-miR-146a-5p", "clipExpNum": 16},
+  {"lncRNA": "NEAT1", "miRNA": "hsa-miR-146a-5p", "clipExpNum": 11},
+  {"lncRNA": "XIST", "miRNA": "hsa-miR-146a-5p", "clipExpNum": 6},
+  {"lncRNA": "SNHG7", "miRNA": "hsa-miR-146a-5p", "clipExpNum": 2}
+ ],
+ "note": "miRNA-mRNA edges: miRTarBase validated or TargetScan+miRDB co-predicted (multiMiR); lncRNA-miRNA edges: ENCORI CLIP-supported (clipExpNum>=1), top5 per miRNA"
+}

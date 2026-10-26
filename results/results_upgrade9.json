@@ -1,0 +1,171 @@
+{
+ "n_up": 333,
+ "n_down": 228,
+ "n_entities_up": 331,
+ "n_entities_down": 228,
+ "n_signatures_returned": 400,
+ "top_reversers": [
+  {
+   "drug": "BRD-A11731846",
+   "cell": "PHH",
+   "dose": "2.5 uM",
+   "time": "6 h",
+   "zsum": -19.165434746079768,
+   "direction": "reverser (candidate)"
+  },
+  {
+   "drug": "rolipram",
+   "cell": "HELA",
+   "dose": "0.03 uM",
+   "time": "24 h",
+   "zsum": -15.886436501756055,
+   "direction": "reverser (candidate)"
+  },
+  {
+   "drug": "celecoxib",
+   "cell": "YAPC",
+   "dose": "0.74 uM",
+   "time": "24 h",
+   "zsum": -15.705770694351141,
+   "direction": "reverser (candidate)"
+  },
+  {
+   "drug": "toremifene",
+   "cell": "PC3",
+   "dose": "0.25 uM",
+   "time": "24 h",
+   "zsum": -14.521112292854882,
+   "direction": "reverser (candidate)"
+  },
+  {
+   "drug": "GW-788388",
+   "cell": "PC3",
+   "dose": "10 uM",
+   "time": "24 h",
+   "zsum": -14.496380571608857,
+   "direction": "reverser (candidate)"
+  },
+  {
+   "drug": "BRD-K23875128",
+   "cell": "A549",
+   "dose": "3.33 uM",
+   "time": "24 h",
+   "zsum": -14.487179251265719,
+   "direction": "reverser (candidate)"
+  },
+  {
+   "drug": "SB-683698",
+   "cell": "HELA",
+   "dose": "0.74 uM",
+   "time": "3 h",
+   "zsum": -14.41280646050563,
+   "direction": "reverser (candidate)"
+  },
+  {
+   "drug": "dapagliflozin",
+   "cell": "YAPC",
+   "dose": "0.25 uM",
+   "time": "24 h",
+   "zsum": -14.189257288877496,
+   "direction": "reverser (candidate)"
+  },
+  {
+   "drug": "BRD-K29911749",
+   "cell": "U2OS",
+   "dose": "10 uM",
+   "time": "6 h",
+   "zsum": -14.08786302182477,
+   "direction": "reverser (candidate)"
+  },
+  {
+   "drug": "levosulpiride",
+   "cell": "XC.P906",
+   "dose": "10 uM",
+   "time": "24 h",
+   "zsum": -14.05385649351805,
+   "direction": "reverser (candidate)"
+  }
+ ],
+ "top_mimickers": [
+  {
+   "drug": "inositol",
+   "cell": "THP1",
+   "dose": "0.74 uM",
+   "time": "24 h",
+   "zsum": 13.89805056342939,
+   "direction": "mimicker (disease-like)"
+  },
+  {
+   "drug": "firategrast",
+   "cell": "HELA",
+   "dose": "0.74 uM",
+   "time": "24 h",
+   "zsum": 14.25917197271431,
+   "direction": "mimicker (disease-like)"
+  },
+  {
+   "drug": "BRD-K09991945",
+   "cell": "BT20",
+   "dose": "0.37 uM",
+   "time": "24 h",
+   "zsum": 14.26528554016642,
+   "direction": "mimicker (disease-like)"
+  },
+  {
+   "drug": "Y-39983",
+   "cell": "LNCAP",
+   "dose": "0.04 uM",
+   "time": "3 h",
+   "zsum": 14.690739298397595,
+   "direction": "mimicker (disease-like)"
+  },
+  {
+   "drug": "BX-795",
+   "cell": "MCLF130CN",
+   "dose": "4 uM",
+   "time": "6 h",
+   "zsum": 14.801240600656705,
+   "direction": "mimicker (disease-like)"
+  },
+  {
+   "drug": "pterostilbene",
+   "cell": "HELA",
+   "dose": "0.03 uM",
+   "time": "3 h",
+   "zsum": 14.869441313720625,
+   "direction": "mimicker (disease-like)"
+  },
+  {
+   "drug": "varespladib",
+   "cell": "HELA",
+   "dose": "0.125 uM",
+   "time": "24 h",
+   "zsum": 15.034775015349634,
+   "direction": "mimicker (disease-like)"
+  },
+  {
+   "drug": "BRD-K39893946",
+   "cell": "MCF10A",
+   "dose": "30 uM",
+   "time": "24 h",
+   "zsum": 15.39054541964992,
+   "direction": "mimicker (disease-like)"
+  },
+  {
+   "drug": "fluconazole",
+   "cell": "HUVEC",
+   "dose": "2.22 uM",
+   "time": "24 h",
+   "zsum": 15.806870267562346,
+   "direction": "mimicker (disease-like)"
+  },
+  {
+   "drug": "lenvatinib",
+   "cell": "HA1E",
+   "dose": "0.25 uM",
+   "time": "24 h",
+   "zsum": 20.602684905320626,
+   "direction": "mimicker (disease-like)"
+  }
+ ]
+}
